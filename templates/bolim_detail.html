@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .ad {     max-width: 100%;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .listings {
+          margin-top: 80px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .price{
+          color: black;
+        }
+        @media only screen and (max-width: 600px){
+          .listings{
+            grid-template-columns: 1fr;
+          }
+        }
+</style>
+<main>
+  <div class="container">
+      <section class="listings">
+        {% for fan in fans %} 
+              <div class="ad">
+                  <a href="{% url 'app:fan_detail' fan.id %}" style="color: aliceblue; text-decoration: none;"><img src="{{fan.Rasm.url}}"></a>
+                  <a href="{% url 'app:fan_detail' fan.id %}" style="color: aliceblue; text-decoration: none;">
+                      <figcaption class="info-wrap">
+                          <a href="{% url 'app:fan_detail' fan.id %}" style="color: aliceblue; text-decoration: none;">
+                              <div class="price">
+                                  <span class="price"><h1>{{fan.Fan_nomi}}</h1></span>
+                              </div>
+                          </a>
+                      </figcaption>
+                  </a>
+              </div>
+          {% endfor %}
+      </section>
+  </div>
+</main>
+{% endblock %}
