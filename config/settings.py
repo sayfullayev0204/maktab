@@ -21,7 +21,7 @@ import environ
 env=environ.Env()
 environ.Env.read_env()
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^nvf^r$)xy47xni^v%ux!2u450=r(zi(-rf6_e@4ht*lowga)^'
+SECRET_KEY = 'django-insecure-czjteyjq_+%!a004*he#ck7qo*rydt%lpq+hh49@&0i@k)r_l&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
